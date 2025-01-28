@@ -3,26 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resumos dos Livros</title>
+    <title>Resumos - Plano de Leitura Bíblica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Resumos dos Livros</h1>
-
-    <!-- Seção de Resumos -->
-    <div class="resumo">
-        <h2>Gênesis</h2>
-        <p>Resumo: O livro de Gênesis narra a criação do mundo, o pecado do homem e as alianças de Deus com Abraão, Isaque e Jacó.</p>
-    </div>
-
-    <!-- Comentários em formato "stories" -->
-    <div class="comments">
-        <h3>Adicione seu comentário:</h3>
-        <form>
-            <input type="text" placeholder="Seu nome" required>
-            <textarea placeholder="Sua observação sobre este livro" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+    <div class="pagina-resumos">
+        <h1>Resumos da Leitura</h1>
+        <div class="resumo">
+            <button onclick="exibirResumo('genesis')">Gênesis</button>
+            <button onclick="exibirResumo('exodo')">Êxodo</button>
+            <button onclick="exibirResumo('levitico')">Levítico</button>
+            <button onclick="exibirResumo('numeros')">Números</button>
+            <button onclick="exibirResumo('deuteronomio')">Deuteronômio</button>
+            <button onclick="exibirResumo('josue')">Josué</button>
+            <button onclick="exibirResumo('juizes')">Juízes</button>
+            <button onclick="exibirResumo('rute')">Rute</button>
+            <button onclick="exibirResumo('1-samuel')">1 Samuel</button>
+            <button onclick="exibirResumo('2-samuel')">2 Samuel</button>
+            <button onclick="exibirResumo('1-reis')">1 Reis</button>
+            <button onclick="exibirResumo('2-reis')">2 Reis</button>
+            <button onclick="exibirResumo('1-cronicas')">1 Crônicas</button>
+            <button onclick="exibirResumo('2-cronicas')">2 Crônicas</button>
+        </div>
+        <div class="comments">
+            <h2>Adicione sua Observação</h2>
+            <form>
+                <input type="text" placeholder="Seu Nome">
+                <textarea placeholder="Sua Observação"></textarea>
+                <button>Enviar</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
