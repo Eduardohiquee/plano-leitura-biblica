@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="resumos">
+        <h1>Resumos dos Livros</h1>
+        <div class="livro">
+            <h2>Gênesis</h2>
+            <p>Resumo do livro de Gênesis...</p>
+            <div class="comentarios">
+                <textarea placeholder="Deixe sua observação..."></textarea>
+                <button class="btn">Enviar</button>
+            </div>
+        </div>
+        <!-- Reações ao comentário -->
+        <div class="reacoes">
+            <span class="emoji">❤️</span>
+            <span class="emoji">🔥</span>
+            <span class="emoji">👏</span>
+        </div>
+    </div>
+
+    <script>
+        // Simulando o envio de comentário com efeito de story
+        const btn = document.querySelector('.btn');
+        const comentarios = document.querySelector('.comentarios');
+        const texto = document.querySelector('textarea');
+
+        btn.addEventListener('click', function() {
+            const observacao = texto.value;
+            if (observacao) {
+                const comentarioElement = document.createElement('div');
+                comentarioElement.textContent = observacao;
+                comentarioElement.classList.add('comentario');
+                document.body.appendChild(comentarioElement);
+                texto.value = ''; // Limpar o campo de texto
+            }
+        });
+    </script>
+</body>
+</html>

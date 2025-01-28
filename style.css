@@ -1,0 +1,43 @@
+/* Estilo para o corpo do site */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c8e6c9; /* Verde pastel */
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo para o título */
+h1 {
+    font-size: 3rem;
+    color: #2c6b3b;
+}
+
+/* Estilo para o botão */
+button {
+    background-color: #ff7043;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo para as hashtags */
+#hashtags {
+    margin-top: 20px;
+}
+
+.hashtag {
+    font-size: 1.5rem;
+    color: #ff5722;
+    margin: 0 10px;
+    display: inline-block;
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
