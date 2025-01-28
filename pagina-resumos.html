@@ -6,33 +6,29 @@
     <title>Resumos - Plano de Leitura Bíblica</title>
     <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="pagina-resumos">
         <h1>Resumos da Leitura</h1>
-        <div class="resumo">
-            <button onclick="exibirResumo('genesis')">Gênesis</button>
-            <button onclick="exibirResumo('exodo')">Êxodo</button>
-            <button onclick="exibirResumo('levitico')">Levítico</button>
-            <button onclick="exibirResumo('numeros')">Números</button>
-            <button onclick="exibirResumo('deuteronomio')">Deuteronômio</button>
-            <button onclick="exibirResumo('josue')">Josué</button>
-            <button onclick="exibirResumo('juizes')">Juízes</button>
-            <button onclick="exibirResumo('rute')">Rute</button>
-            <button onclick="exibirResumo('1-samuel')">1 Samuel</button>
-            <button onclick="exibirResumo('2-samuel')">2 Samuel</button>
-            <button onclick="exibirResumo('1-reis')">1 Reis</button>
-            <button onclick="exibirResumo('2-reis')">2 Reis</button>
-            <button onclick="exibirResumo('1-cronicas')">1 Crônicas</button>
-            <button onclick="exibirResumo('2-cronicas')">2 Crônicas</button>
-        </div>
-        <div class="comments">
-            <h2>Adicione sua Observação</h2>
-            <form>
-                <input type="text" placeholder="Seu Nome">
-                <textarea placeholder="Sua Observação"></textarea>
-                <button>Enviar</button>
-            </form>
+        <div class="resumos-container">
+            <div class="botoes-livros">
+                <button onclick="exibirResumo('genesis')">Gênesis</button>
+                <button onclick="exibirResumo('exodo')">Êxodo</button>
+                <button onclick="exibirResumo('levitico')">Levítico</button>
+                <button onclick="exibirResumo('numeros')">Números</button>
+                <button onclick="exibirResumo('deuteronomio')">Deuteronômio</button>
+                <button onclick="exibirResumo('josue')">Josué</button>
+                <button onclick="exibirResumo('juizes')">Juízes</button>
+                <button onclick="exibirResumo('rute')">Rute</button>
+                <button onclick="exibirResumo('1-samuel')">1 Samuel</button>
+                <button onclick="exibirResumo('2-samuel')">2 Samuel</button>
+                <button onclick="exibirResumo('1-reis')">1 Reis</button>
+                <button onclick="exibirResumo('2-reis')">2 Reis</button>
+                <button onclick="exibirResumo('1-cronicas')">1 Crônicas</button>
+                <button onclick="exibirResumo('2-cronicas')">2 Crônicas</button>
+            </div>
+            <div id="conteudo-resumo"></div>
         </div>
     </div>
 </body>
