@@ -1,22 +1,25 @@
-/* Configuração geral */
+/* Corpo da página */
 body {
     background-color: #A8D5BA; /* Cor verde pastel */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     height: 100vh;
-    overflow: hidden; /* Evitar barra de rolagem */
+    overflow: hidden;
+    position: relative;
 }
 
-/* Container para centralizar título e botão */
+/* Container do título e botão */
 .container {
     text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10; /* Coloca o título acima das hashtags */
 }
 
+/* Estilo do título */
 h1 {
     font-size: 3em;
     color: #333;
@@ -27,7 +30,7 @@ h1 {
 button {
     font-size: 1.2em;
     padding: 15px 30px;
-    background-color: #FF7043; /* Cor de fundo em laranja */
+    background-color: #FF7043;
     color: white;
     border: none;
     border-radius: 5px;
@@ -36,43 +39,45 @@ button {
 }
 
 button:hover {
-    background-color: #FF5722; /* Tom mais forte de laranja */
+    background-color: #FF5722;
 }
 
 /* Estilo das hashtags */
 .hashtag {
     position: absolute;
-    font-size: 2em;
-    font-family: 'Bubblegum Sans', cursive; /* Fonte Double Bubble */
-    color: #FF7043; /* Cor laranja */
-    animation: floatRandom 8s ease-in-out infinite;
+    font-size: 2.5em;
+    font-family: 'Bubblegum Sans', cursive;
+    background: var(--color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: float 12s ease-in-out infinite;
     white-space: nowrap;
 }
 
-/* Animação para balançar como balões */
-@keyframes floatRandom {
+/* Movimentos suaves e aleatórios */
+@keyframes float {
     0% {
-        transform: translateX(0px) translateY(0px);
+        transform: translate(0, 0);
     }
     25% {
-        transform: translateX(10px) translateY(-10px);
+        transform: translate(-20px, -50px);
     }
     50% {
-        transform: translateX(-10px) translateY(10px);
+        transform: translate(20px, -100px);
     }
     75% {
-        transform: translateX(5px) translateY(-5px);
+        transform: translate(-15px, -150px);
     }
     100% {
-        transform: translateX(0px) translateY(0px);
+        transform: translate(0, -200px);
     }
 }
 
-/* Estilos diferentes para cada hashtag */
-.hashtag:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
-.hashtag:nth-child(2) { top: 20%; left: 40%; animation-delay: 1s; }
-.hashtag:nth-child(3) { top: 30%; left: 70%; animation-delay: 2s; }
-.hashtag:nth-child(4) { top: 50%; left: 20%; animation-delay: 3s; }
-.hashtag:nth-child(5) { top: 60%; left: 80%; animation-delay: 4s; }
-.hashtag:nth-child(6) { top: 70%; left: 30%; animation-delay: 5s; }
-.hashtag:nth-child(7) { top: 80%; left: 60%; animation-delay: 6s; }
+/* Posição inicial aleatória das hashtags */
+.hashtag:nth-child(1) { top: 80%; left: 10%; animation-delay: 0s; }
+.hashtag:nth-child(2) { top: 85%; left: 30%; animation-delay: 1s; }
+.hashtag:nth-child(3) { top: 90%; left: 50%; animation-delay: 2s; }
+.hashtag:nth-child(4) { top: 95%; left: 70%; animation-delay: 3s; }
+.hashtag:nth-child(5) { top: 85%; left: 90%; animation-delay: 4s; }
+.hashtag:nth-child(6) { top: 90%; left: 20%; animation-delay: 5s; }
+.hashtag:nth-child(7) { top: 95%; left: 40%; animation-delay: 6s; }
