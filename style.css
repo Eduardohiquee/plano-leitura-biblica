@@ -41,3 +41,51 @@ button {
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
+body {
+    background-color: #A8D5BA; /* Cor verde pastel */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    color: #333;
+    padding-top: 50px;
+}
+
+button {
+    font-size: 1.2em;
+    padding: 15px 30px;
+    background-color: #FF7043; /* Cor de fundo em laranja */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FF5722; /* Tom mais forte de laranja */
+}
+
+.hashtag {
+    position: absolute;
+    font-size: 2em;
+    font-family: 'Comic Sans MS', sans-serif;
+    color: white;
+    animation: floatHashtags 5s ease-in-out infinite;
+}
+
+@keyframes floatHashtags {
+    0% { left: -10%; }
+    50% { left: 50%; transform: translateX(-50%); }
+    100% { left: 110%; }
+}
+
+.hashtag:nth-child(1) { animation-delay: 0s; }
+.hashtag:nth-child(2) { animation-delay: 1s; }
+.hashtag:nth-child(3) { animation-delay: 2s; }
+.hashtag:nth-child(4) { animation-delay: 3s; }
+.hashtag:nth-child(5) { animation-delay: 4s; }
+.hashtag:nth-child(6) { animation-delay: 5s; }
