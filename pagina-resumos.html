@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resumos - Plano de Leitura Bíblica</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumos - Plano de Leitura Bíblica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div
+  <div id="botoes-livros"></div>
+  <div id="conteudo-resumo"></div>
+  <script>
+    const botoesLivros = document.getElementById("botoes-livros");
+    const conteudoResumo = document.getElementById("conteudo-resumo");
+    
+    // Cria os botões para cada livro
+    Object.keys(resumos).forEach((livro) => {
+      const botao = document.createElement("button");
+      botao.textContent = livro.toUpperCase();
+      botao.onclick = () => exibirResumo(livro);
+      botoesLivros.appendChild(botao);
+    });
+  </script>
+</body>
+</html>
