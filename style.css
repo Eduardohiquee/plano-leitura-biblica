@@ -1,17 +1,28 @@
+/* Configuração geral */
 body {
     background-color: #A8D5BA; /* Cor verde pastel */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Evitar barra de rolagem */
+}
+
+/* Container para centralizar título e botão */
+.container {
     text-align: center;
 }
 
 h1 {
     font-size: 3em;
     color: #333;
-    padding-top: 50px;
+    margin-bottom: 20px;
 }
 
+/* Estilo do botão */
 button {
     font-size: 1.2em;
     padding: 15px 30px;
@@ -20,29 +31,43 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
     background-color: #FF5722; /* Tom mais forte de laranja */
 }
 
+/* Estilo das hashtags */
 .hashtag {
     position: absolute;
     font-size: 2em;
-    font-family: 'Comic Sans MS', sans-serif;
-    color: white;
-    animation: floatHashtags 5s ease-in-out infinite;
+    font-family: 'Bubblegum Sans', cursive; /* Fonte Double Bubble */
+    color: #FF7043; /* Cor laranja */
+    animation: floatHashtags 12s ease-in-out infinite;
+    white-space: nowrap; /* Evitar quebra de linha */
 }
 
+/* Animação das hashtags */
 @keyframes floatHashtags {
-    0% { left: -10%; }
-    50% { left: 50%; transform: translateX(-50%); }
-    100% { left: 110%; }
+    0% {
+        transform: translateY(100vh) translateX(random(-100px, 100px));
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
 }
 
-.hashtag:nth-child(1) { animation-delay: 0s; }
-.hashtag:nth-child(2) { animation-delay: 1s; }
-.hashtag:nth-child(3) { animation-delay: 2s; }
-.hashtag:nth-child(4) { animation-delay: 3s; }
-.hashtag:nth-child(5) { animation-delay: 4s; }
-.hashtag:nth-child(6) { animation-delay: 5s; }
+/* Estilos diferentes para cada hashtag */
+.hashtag:nth-child(1) { left: 10%; animation-delay: 0s; }
+.hashtag:nth-child(2) { left: 30%; animation-delay: 2s; }
+.hashtag:nth-child(3) { left: 50%; animation-delay: 4s; }
+.hashtag:nth-child(4) { left: 70%; animation-delay: 6s; }
+.hashtag:nth-child(5) { left: 90%; animation-delay: 8s; }
+.hashtag:nth-child(6) { left: 20%; animation-delay: 10s; }
+.hashtag:nth-child(7) { left: 80%; animation-delay: 12s; }
