@@ -1,73 +1,73 @@
 body {
-    font-family: 'Bubblegum Sans', cursive;
-    background-color: #C6F4D6; /* Verde claro em tons pastéis */
+  font-family: 'Bubblegum Sans', cursive;
+  background-color: #C6F4D6; /* Verde claro em tons pastéis */
 }
 
 .container {
-    text-align: center;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .titulo-centralizado {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .botao-centralizado {
-    padding: 10px 20px;
-    background-color: #8BC34A; /* Verde claro */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background-color: #8BC34A; /* Verde claro */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .botao-centralizado:hover {
-    background-color: #3e8e41;
+  background-color: #3e8e41;
 }
 
 .hashtag-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hashtag {
-    position: absolute;
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background: var(--color);
-    animation: flutuar 5s infinite;
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: var(--color);
+  animation: flutuar 5s infinite;
 }
 
 @keyframes flutuar {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
