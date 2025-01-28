@@ -17,6 +17,10 @@ body {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .botao-centralizado {
@@ -26,6 +30,10 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .botao-centralizado:hover {
