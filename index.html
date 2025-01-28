@@ -1,27 +1,54 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plano de Leitura Bíblica em 90 Dias</title>
-    <!-- Fonte Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>A Bíblia em 90 Dias</h1>
-        <button onclick="window.location.href='pagina-resumos.html'">Acompanhe o Resumo</button>
-    </div>
-    <!-- Hashtags flutuantes -->
-    <div class="hashtag-container">
-        <div class="hashtag" style="--color: linear-gradient(to right, #FF3737, #FFA07A);">#MDF</div>
-        <div class="hashtag" style="--color: linear-gradient(to right, #FFC107, #FF9800);">#FireAndLove</div>
-        <div class="hashtag" style="--color: linear-gradient(to right, #F7DC6F, #FFD700);">#CWB</div>
-        <div class="hashtag" style="--color: linear-gradient(to right, #FF3737, #FFA07A);">#Fire</div>
-        <div class="hashtag" style="--color: linear-gradient(to right, #FFC107, #FF9800);">#Mensageiros</div>
-        <div class="hashtag" style="--color: linear-gradient(to right, #F7DC6F, #FFD700);">#Jesus</div>
-        <div class="hashtag" style="--color: linear-gradient(to right, #FF3737, #FFA07A);">#HolySpirit</div>
-    </div>
-</body>
-</html>
+body {
+    font-family: 'Bubblegum Sans', cursive;
+    background-color: #C6F4D6; /* Verde claro em tons pastéis */
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #8BC34A; /* Verde claro */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+.hashtag-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hashtag {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: var(--color);
+    animation: flutuar 5s infinite;
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
