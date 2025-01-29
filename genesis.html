@@ -37,20 +37,19 @@
         }
         .comments-container {
             margin-top: 20px;
-            height: 400px;
-            overflow-y: scroll;
+            max-height: 400px;
+            overflow-y: auto;
             position: relative;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
         }
         .comment {
             padding: 10px;
-            background-color: #f1f1f1;
+            background-color: #e1e1e1;
             border-radius: 5px;
             margin-bottom: 10px;
-            animation: slideUp 5s linear infinite;
-        }
-        @keyframes slideUp {
-            0% { transform: translateY(100%); }
-            100% { transform: translateY(-100%); }
         }
         .back-button {
             margin: 20px;
@@ -68,6 +67,7 @@
 </head>
 <body>
     <button class="back-button" onclick="window.history.back()">Voltar</button>
+    
     <div class="resumo">
         <h2>Gênesis</h2>
         <p>Conta a origem do mundo, da humanidade, do pecado e do povo de Israel. Enfatiza o plano redentor de Deus, começando com a promessa feita a Abraão.</p>
@@ -87,6 +87,7 @@
         </ul>
     </div>
 
+    <h3>Comentários</h3>
     <div class="comments-container" id="comments-container">
         <!-- Comentários vão aparecer aqui -->
     </div>
@@ -97,18 +98,38 @@
     </div>
 
     <script>
+        document.addEventListener("DOMContentLoaded", loadComments);
+
         function addComment() {
             const commentInput = document.getElementById('comment-input');
-            const commentText = commentInput.value;
+            const commentText = commentInput.value.trim();
             if (commentText) {
                 const commentContainer = document.getElementById('comments-container');
                 const newComment = document.createElement('div');
                 newComment.classList.add('comment');
                 newComment.textContent = commentText;
                 commentContainer.appendChild(newComment);
+
+                saveComment(commentText);
                 commentInput.value = ''; // Limpar o campo de input
-                commentContainer.scrollTop = commentContainer.scrollHeight; // Manter a rolagem para o final
             }
+        }
+
+        function saveComment(comment) {
+            let comments = JSON.parse(localStorage.getItem("comments-genesis")) || [];
+            comments.push(comment);
+            localStorage.setItem("comments-genesis", JSON.stringify(comments));
+        }
+
+        function loadComments() {
+            let comments = JSON.parse(localStorage.getItem("comments-genesis")) || [];
+            const commentContainer = document.getElementById('comments-container');
+            comments.forEach(comment => {
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.textContent = comment;
+                commentContainer.appendChild(newComment);
+            });
         }
     </script>
 </body>
