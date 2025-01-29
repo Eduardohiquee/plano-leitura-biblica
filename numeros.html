@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo - Números</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* O mesmo estilo utilizado para Gênesis */
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">Voltar</button>
+    <div class="resumo">
+        <h2>Números</h2>
+        <p>Narra a jornada de Israel pelo deserto e os desafios enfrentados por causa da incredulidade.</p>
+        <p><strong>Principais histórias:</strong></p>
+        <ul>
+            <li>Censo e organização do povo (Nm 1-4)</li>
+            <li>Espiões e incredulidade (Nm 13-14)</li>
+            <li>Serpente de bronze (Nm 21)</li>
+        </ul>
+        <p><strong>Referências a Jesus:</strong></p>
+        <ul>
+            <li>Serpente de bronze (Nm 21:9)</li>
+            <li>Maná do céu</li>
+        </ul>
+    </div>
+
+    <div class="comments-container" id="comments-container">
+        <!-- Comentários vão aparecer aqui -->
+    </div>
+
+    <div class="comment-box">
+        <input type="text" class="comment-input" id="comment-input" placeholder="Deixe seu comentário...">
+        <button class="comment-button" onclick="addComment()">Comentar</button>
+    </div>
+
+    <script>
+        function addComment() {
+            const commentInput = document.getElementById('comment-input');
+            const commentText = commentInput.value;
+            if (commentText) {
+                const commentContainer = document.getElementById('comments-container');
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.textContent = commentText;
+                commentContainer.appendChild(newComment);
+                commentInput.value = ''; // Limpar o campo de input
+                commentContainer.scrollTop = commentContainer.scrollHeight; // Manter a rolagem para o final
+            }
+        }
+    </script>
+</body>
+</html>

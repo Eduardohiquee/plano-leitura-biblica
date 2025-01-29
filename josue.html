@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo - Josué</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* O mesmo estilo utilizado para Gênesis */
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">Voltar</button>
+    <div class="resumo">
+        <h2>Josué</h2>
+        <p>Relata a conquista e divisão da Terra Prometida sob a liderança de Josué.</p>
+        <p><strong>Principais histórias:</strong></p>
+        <ul>
+            <li>Queda de Jericó (Js 6)</li>
+            <li>Divisão da Terra (Js 13-22)</li>
+            <li>Despedida de Josué (Js 23-24)</li>
+        </ul>
+        <p><strong>Referências a Jesus:</strong></p>
+        <ul>
+            <li>Josué (Yeshua): Nome que significa “Deus é salvação”, prefigura Cristo como líder que nos leva à promessa.</li>
+        </ul>
+    </div>
+
+    <div class="comments-container" id="comments-container">
+        <!-- Comentários vão aparecer aqui -->
+    </div>
+
+    <div class="comment-box">
+        <input type="text" class="comment-input" id="comment-input" placeholder="Deixe seu comentário...">
+        <button class="comment-button" onclick="addComment()">Comentar</button>
+    </div>
+
+    <script>
+        function addComment() {
+            const commentInput = document.getElementById('comment-input');
+            const commentText = commentInput.value;
+            if (commentText) {
+                const commentContainer = document.getElementById('comments-container');
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.textContent = commentText;
+                commentContainer.appendChild(newComment);
+                commentInput.value = ''; // Limpar o campo de input
+                commentContainer.scrollTop = commentContainer.scrollHeight; // Manter a rolagem para o final
+            }
+        }
+    </script>
+</body>
+</html>

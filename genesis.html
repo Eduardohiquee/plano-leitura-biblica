@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo - Gênesis</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .comment-box {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            width: 90%;
+            max-width: 500px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .comment-input {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .comment-button {
+            width: 15%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .comment-button:hover {
+            background-color: #0056b3;
+        }
+        .comments-container {
+            margin-top: 20px;
+            height: 400px;
+            overflow-y: scroll;
+            position: relative;
+        }
+        .comment {
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            animation: slideUp 5s linear infinite;
+        }
+        @keyframes slideUp {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(-100%); }
+        }
+        .back-button {
+            margin: 20px;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">Voltar</button>
+    <div class="resumo">
+        <h2>Gênesis</h2>
+        <p>Conta a origem do mundo, da humanidade, do pecado e do povo de Israel. Enfatiza o plano redentor de Deus, começando com a promessa feita a Abraão.</p>
+        <p><strong>Principais histórias:</strong></p>
+        <ul>
+            <li>Criação (Gn 1-2)</li>
+            <li>Queda do homem (Gn 3)</li>
+            <li>Dilúvio e Noé (Gn 6-9)</li>
+            <li>Torre de Babel (Gn 11)</li>
+            <li>Abraão (Gn 12-25)</li>
+            <li>Isaque, Jacó e José (Gn 26-50)</li>
+        </ul>
+        <p><strong>Referências a Jesus:</strong></p>
+        <ul>
+            <li>Semente da mulher (Gn 3:15)</li>
+            <li>Sacrifício de Isaque (Gn 22)</li>
+        </ul>
+    </div>
+
+    <div class="comments-container" id="comments-container">
+        <!-- Comentários vão aparecer aqui -->
+    </div>
+
+    <div class="comment-box">
+        <input type="text" class="comment-input" id="comment-input" placeholder="Deixe seu comentário...">
+        <button class="comment-button" onclick="addComment()">Comentar</button>
+    </div>
+
+    <script>
+        function addComment() {
+            const commentInput = document.getElementById('comment-input');
+            const commentText = commentInput.value;
+            if (commentText) {
+                const commentContainer = document.getElementById('comments-container');
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.textContent = commentText;
+                commentContainer.appendChild(newComment);
+                commentInput.value = ''; // Limpar o campo de input
+                commentContainer.scrollTop = commentContainer.scrollHeight; // Manter a rolagem para o final
+            }
+        }
+    </script>
+</body>
+</html>

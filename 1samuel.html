@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo - 1 Samuel</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* O mesmo estilo utilizado para Gênesis */
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">Voltar</button>
+    <div class="resumo">
+        <h2>1 Samuel</h2>
+        <p>Relata o estabelecimento da monarquia em Israel e a vida dos reis Saul e Davi.</p>
+        <p><strong>Principais histórias:</strong></p>
+        <ul>
+            <li>Unção de Davi (1 Sm 16)</li>
+            <li>Davi e Golias (1 Sm 17)</li>
+            <li>Pecado de Davi e redenção (2 Sm 11-12)</li>
+        </ul>
+        <p><strong>Referências a Jesus:</strong></p>
+        <ul>
+            <li>Davi como rei: Aponta para Jesus como o Rei eterno da linhagem de Davi.</li>
+        </ul>
+    </div>
+
+    <div class="comments-container" id="comments-container">
+        <!-- Comentários vão aparecer aqui -->
+    </div>
+
+    <div class="comment-box">
+        <input type="text" class="comment-input" id="comment-input" placeholder="Deixe seu comentário...">
+        <button class="comment-button" onclick="addComment()">Comentar</button>
+    </div>
+
+    <script>
+        function addComment() {
+            const commentInput = document.getElementById('comment-input');
+            const commentText = commentInput.value;
+            if (commentText) {
+                const commentContainer = document.getElementById('comments-container');
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.textContent = commentText;
+                commentContainer.appendChild(newComment);
+                commentInput.value = ''; // Limpar o campo de input
+                commentContainer.scrollTop = commentContainer.scrollHeight; // Manter a rolagem para o final
+            }
+        }
+    </script>
+</body>
+</html>
