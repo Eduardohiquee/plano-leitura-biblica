@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="back-button" onclick="voltarParaInicio()">Voltar</button>
+    <!-- Botão de Voltar -->
+    <button class="back-button" onclick="window.history.back()">Voltar</button>
+
+    <!-- Container dos botões dos livros -->
     <div class="book-buttons">
         <button class="book-button" onclick="mostrarResumo('genesis')">Gênesis</button>
         <button class="book-button" onclick="mostrarResumo('exodo')">Êxodo</button>
@@ -22,6 +25,7 @@
         <button class="book-button" onclick="mostrarResumo('cronicas')">1 e 2 Crônicas</button>
     </div>
 
+    <!-- Resumos dos livros (visíveis ao clicar nos botões) -->
     <div id="genesis" class="resumo">
         <h2>Gênesis</h2>
         <p>Conta a origem do mundo, da humanidade, do pecado e do povo de Israel...</p>
