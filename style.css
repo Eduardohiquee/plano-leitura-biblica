@@ -1,83 +1,58 @@
-/* Corpo da página */
-body {
-    background-color: #A8D5BA; /* Cor verde pastel */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
+/* Botões em forma de livros */
+.botoes-livros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
 }
 
-/* Container do título e botão */
-.container {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10; /* Coloca o título acima das hashtags */
-}
-
-/* Estilo do título */
-h1 {
-    font-size: 3em;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Estilo do botão */
-button {
-    font-size: 1.2em;
-    padding: 15px 30px;
+.botoes-livros button {
+    padding: 10px 15px;
     background-color: #FF7043;
     color: white;
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 1em;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
 }
 
-button:hover {
+.botoes-livros button:hover {
     background-color: #FF5722;
 }
 
-/* Estilo das hashtags */
-.hashtag {
-    position: absolute;
-    font-size: 2.5em;
+/* Conteúdo do resumo */
+#conteudo-resumo {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #F5F5F5;
+    border: 2px solid #FF7043;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Formato para observações */
+.observacoes {
+    margin-top: 20px;
+}
+
+.observacoes h2 {
     font-family: 'Bubblegum Sans', cursive;
-    background: var(--color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: float 12s ease-in-out infinite;
-    white-space: nowrap;
+    color: #FF7043;
 }
 
-/* Movimentos suaves e aleatórios */
-@keyframes float {
-    0% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(-20px, -50px);
-    }
-    50% {
-        transform: translate(20px, -100px);
-    }
-    75% {
-        transform: translate(-15px, -150px);
-    }
-    100% {
-        transform: translate(0, -200px);
-    }
+.observacoes .story {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #FFE0B2;
+    border-radius: 10px;
+    animation: fadeIn 1s ease;
 }
 
-/* Posição inicial aleatória das hashtags */
-.hashtag:nth-child(1) { top: 80%; left: 10%; animation-delay: 0s; }
-.hashtag:nth-child(2) { top: 85%; left: 30%; animation-delay: 1s; }
-.hashtag:nth-child(3) { top: 90%; left: 50%; animation-delay: 2s; }
-.hashtag:nth-child(4) { top: 95%; left: 70%; animation-delay: 3s; }
-.hashtag:nth-child(5) { top: 85%; left: 90%; animation-delay: 4s; }
-.hashtag:nth-child(6) { top: 90%; left: 20%; animation-delay: 5s; }
-.hashtag:nth-child(7) { top: 95%; left: 40%; animation-delay: 6s; }
+/* Animação para observações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
