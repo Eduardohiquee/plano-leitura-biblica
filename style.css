@@ -1,58 +1,46 @@
-/* Botões em forma de livros */
-.botoes-livros {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.botoes-livros button {
-    padding: 10px 15px;
-    background-color: #FF7043;
-    color: white;
-    font-family: 'Bubblegum Sans', cursive;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+body {
+    background-color: #a8d5ba;
+    font-family: Arial, sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
-.botoes-livros button:hover {
-    background-color: #FF5722;
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Conteúdo do resumo */
-#conteudo-resumo {
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(to right, red, orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Pacifico', cursive;
+}
+
+.resumo-button {
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
     margin-top: 20px;
-    padding: 15px;
-    background-color: #F5F5F5;
-    border: 2px solid #FF7043;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Formato para observações */
-.observacoes {
-    margin-top: 20px;
-}
-
-.observacoes h2 {
-    font-family: 'Bubblegum Sans', cursive;
-    color: #FF7043;
-}
-
-.observacoes .story {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #FFE0B2;
-    border-radius: 10px;
-    animation: fadeIn 1s ease;
-}
-
-/* Animação para observações */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+#emoji-rain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
 }
